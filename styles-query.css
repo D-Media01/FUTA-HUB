@@ -1,0 +1,25 @@
+@media screen and (max-width: 900px) {
+    .footer-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .aspirant-futarians-container {
+        flex-direction: row;
+    }
+
+    .stats-container {
+        flex-direction: row;
+    }
+
+    .footer {
+        flex-direction: row;
+    }
+
+    .nav-links {
+        display: flex;
+    }
+}
+
