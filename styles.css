@@ -37,11 +37,15 @@ body {
 /* ============================= */
 
 .main-container {
-    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid rgba(255,255,255,0.2);
+
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+
 }
 
 /* ============================= */
@@ -136,8 +140,8 @@ body {
 
     background: linear-gradient(
         270deg,
-        #9ec5ff,
-        #c8e0ff,
+        #0a2349,
+        #253549,
         #9ec5ff
     );
 
@@ -259,8 +263,11 @@ body {
 /* ============================= */
 
 .aspirant-futarians-container {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
     padding: 1rem;
 }
@@ -356,10 +363,10 @@ body {
 }
 
 .section-title{
-    font-size:2rem;
+    font-size: 1.8rem;
     font-weight:700;
-    margin-bottom:2rem;
-    color:#7C3AED;
+
+    color: black;
 }
 
 .steps-container{
@@ -473,7 +480,7 @@ body {
 
     box-shadow: 0 8px 32px rgba(0,0,0,0.25);
 
-    color: white;
+    color: black;
 
     transition: transform 0.3s ease;
 }
@@ -485,6 +492,9 @@ body {
 .glass-card:hover{
     transform: translateY(-8px);
 }
+
+/* ====================== */
+
 
 .section-head {
     font-size: 1.5rem;
@@ -581,13 +591,29 @@ body {
 .why-choose-us {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    text-align: center;
     gap: 15px;
     padding: 1rem;
+
+}
+
+.why-choose-us-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 1rem;
+    border-left: #800020 solid 2px; 
+    border-radius: 30px;
 }
 
 .why-choose-us-card {
+    display: flex;
+    width: 15rem;
     background-color: white;
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 8px;
 }
 
@@ -605,7 +631,6 @@ body {
     color: white;
     padding: 1.5rem 1rem;
     align-self: center;
-    margin-top: 6rem;
 }
 
 .footer-container{
