@@ -211,7 +211,7 @@ body {
 .hero-btn-group {
     display: flex;
     gap: 1rem;
-    
+    flex-wrap: wrap;
     opacity:0;
     animation: slideUpButtons 0.8s ease forwards;
     animation-delay:0.6s;
@@ -612,13 +612,111 @@ body {
 .why-choose-us-card {
     display: flex;
     width: 15rem;
-    background-color: white;
     padding: 1.5rem;
     border-radius: 8px;
 }
 
 .why-choose-us-text {
     font-size: 0.9rem;
+}
+
+/* TESTIMONIALS */
+/* TESTIMONIAL SECTION */
+
+.testimonials-section{
+    width:100%;
+    padding:80px 20px;
+    text-align:center;
+}
+
+.testimonials-title{
+    font-size:2rem;
+    font-weight:700;
+    margin-bottom:50px;
+}
+
+/* CONTAINER */
+
+.testimonials-container{
+    display:flex;
+    gap:25px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding-bottom:10px;
+}
+
+/* hide scrollbar */
+
+.testimonials-container::-webkit-scrollbar{
+    display:none;
+}
+
+.testimonial-card{
+    min-width:300px;
+    scroll-snap-align:center;
+}
+
+/* CARD */
+
+.testimonial-card{
+    width:300px;
+    padding:25px;
+    border-radius:18px;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.25);
+    border:1px solid rgba(255,255,255,0.3);
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.testimonial-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* STARS */
+
+.stars{
+    font-size:18px;
+    margin-bottom:15px;
+}
+
+/* TEXT */
+
+.testimonial-text{
+    font-size:15px;
+    line-height:1.6;
+    margin-bottom:20px;
+    color:#374151;
+}
+
+/* USER */
+
+.testimonial-user{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+/* PHOTO */
+
+.testimonial-photo{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+/* NAME */
+
+.student-name{
+    font-size:15px;
+    font-weight:600;
+}
+
+.student-dept{
+    font-size:13px;
+    color:#6B7280;
 }
 
 /* ============================= */
@@ -634,12 +732,12 @@ body {
 }
 
 .footer-container{
-    width: 100%;
+    
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: space-evenly;
+    justify-content: center;
     gap: 5rem;
 }
 
