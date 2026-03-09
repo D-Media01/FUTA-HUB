@@ -120,34 +120,28 @@ body {
     background: #dfb601;
 }
 
+.menu-alone {
+    color: black;
+}
+
 /* ============================= */
 /* HERO SECTION */
 /* ============================= */
 
 .container {
     padding: 2rem 1rem;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .hero-container {
-    height: 100vh;          /* Full screen */
+    height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center;     /* Center content horizontally */
-    text-align: center;
+    justify-content: center; 
 
-    background: linear-gradient(
-        270deg,
-        #0a2349,
-        #253549,
-        #9ec5ff
-    );
-
-    background-size: 400% 400%;
-
-    animation: gradientMove 10s ease infinite;
+    background-image: url(/IMAGES/hero\ background.jpeg);
+    background-size: cover;
 }
 
 @keyframes gradientMove{
@@ -162,8 +156,14 @@ body {
     }
 }
 
+.hero-text-button-group {
+    display: flex;
+    flex-direction: column;
+    padding-left: 3rem;
+}
+
 .hero-text {
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 5vw, 3rem);
     font-weight: 700;
     margin-bottom: 0.3rem;
     color: #000000;
@@ -173,13 +173,7 @@ body {
     animation: fadeInHero 1.2s ease forwards;
 }
 
-.hero-text {
-    font-size: clamp(1.8rem, 5vw, 3rem); /* min 1.8rem, max 3rem, scales with viewport */
-    font-weight: 700;
-    margin-bottom: 0.3rem;
-    color: #000000;
-    text-align: center; /* Optional: center on mobile for better look */
-}
+
 
 @keyframes fadeInHero{
     from{
@@ -208,9 +202,9 @@ body {
 
 .hero-subtext {
     font-size: 0.95rem;
-    color: #6A0DAD;
+    color: white;
     font-weight: 600;
-
+    letter-spacing: 0.07rem;
     opacity:0;
     animation: fadeInHero 0.8s ease forwards;
     animation-delay:0.3s;
@@ -218,7 +212,7 @@ body {
 
 .hero-btn-group {
     display: flex;
-    gap: 1rem;
+    gap: 1.3rem;
     flex-wrap: wrap;
     opacity:0;
     animation: slideUpButtons 0.8s ease forwards;
@@ -266,9 +260,25 @@ body {
     color: white;
 }
 
+.hero-description {
+    font-size: 1rem;
+    text-wrap: inherit;
+    color: white;
+    margin-top: 2.5rem;
+    max-width: 40rem;
+}
+
 /* ============================= */
 /* ASPIRANT & FUTARIAN SECTION */
 /* ============================= */
+
+.hub {
+    margin-top: 5rem;
+}
+
+.hub-section-subtitle {
+    text-align: center;
+}
 
 .aspirant-futarians-container {
     width: 100%;
@@ -735,14 +745,14 @@ body {
 }
 
 .section-title{
-    font-size:2rem;
+    font-size: clamp(1rem, 5vw, 2rem);
     font-weight:700;
     margin-bottom:10px;
 }
 
 .section-subtitle{
     color:#6b7280;
-    margin-bottom:50px;
+    margin-bottom:2rem;
 }
 
 .opportunities-grid{
@@ -851,7 +861,7 @@ body {
 }
 
 .cta-title{
-    font-size:2.5rem;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
     font-weight:700;
     color:white;
     margin-bottom:20px;
@@ -904,30 +914,28 @@ body {
 /* ============================= */
 
 .footer {
-    max-width: 100%;
+    width: 100%;
     background-color: #111827;
     color: white;
-    padding: 1.5rem 1rem;
+    padding: 1rem 1rem;
     align-self: center;
 }
 
 .footer-container{
-    
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    flex-shrink: inherit;
     align-items: flex-start;
     justify-content: center;
-    gap: 5rem;
+    gap: 3rem;
 }
 
 
-
-.logo-name-descriiption-wrap{
+.logo-name-description-wrap{
     display: flex;
     flex-direction: column;
     align-items: left;
-    
     gap: 1rem;
 }
 
@@ -935,11 +943,11 @@ body {
     font-size: 0.9rem;
     color: #ffffff;
     margin-top: 0.5rem;
-    max-width: 300px;
+    max-width: 20rem;
 }
 
 .newsletter {
-    width: 15rem;
+    max-width: 15rem;
     display: flex;
     flex-direction: column;
     align-items: center;
