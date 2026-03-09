@@ -61,7 +61,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    gap: 10rem;
+    gap: 6rem;
     
     margin: 0;
     background-color: aliceblue;
@@ -76,12 +76,11 @@ body {
 .logo-name-wrap {
     display: flex;
     align-items: center;
-    
-    gap: 8px;
+    gap: 2px;
 }
 
 .name {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 800;
     color: #7C3AED;
     letter-spacing: 1px;
@@ -120,8 +119,28 @@ body {
     background: #dfb601;
 }
 
-.menu-alone {
-    color: black;
+.mobile-menu-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #7C3AED;
+}
+
+.mobile-menu {
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 10;
+}
+
+.mobile-nav-icon {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 /* ============================= */
@@ -159,7 +178,8 @@ body {
 .hero-text-button-group {
     display: flex;
     flex-direction: column;
-    padding-left: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .hero-text {
@@ -201,7 +221,7 @@ body {
 }
 
 .hero-subtext {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: white;
     font-weight: 600;
     letter-spacing: 0.07rem;
@@ -261,7 +281,7 @@ body {
 }
 
 .hero-description {
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-wrap: inherit;
     color: white;
     margin-top: 2.5rem;
@@ -752,7 +772,8 @@ body {
 
 .section-subtitle{
     color:#6b7280;
-    margin-bottom:2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .opportunities-grid{
@@ -927,7 +948,7 @@ body {
     flex-direction: row;
     flex-shrink: inherit;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 3rem;
 }
 
@@ -986,8 +1007,16 @@ body {
     text-decoration: none;
 }
 
-.copyright {
+.transcend-copyright {
     margin-top: 2rem;
     text-align: center;
     font-size: 0.9rem;
+    color: white;
 }
+
+.copyright {
+    
+    text-align: center;
+    font-size: 0.9rem;
+}
+

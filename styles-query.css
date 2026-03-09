@@ -18,5 +18,18 @@
     .nav-links {
         display: flex;
     }
+
+    .mobile-menu-icon {
+        display: none;
+    }
+    
 }
+
+
+@media screen and (max-width: 749px) {
+    .mobile-menu {
+        display: none;
+    } 
+}
+
 
