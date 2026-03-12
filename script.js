@@ -1,33 +1,16 @@
-const menuAlone = document.querySelector(".mobile-menu-icon");
-const navMobileHide = document.querySelector(".mobile-menu");
-const body = document.querySelector(".body")
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
 
-// Show the mobile nav and hide the menu icon
-menuAlone.addEventListener("click", (event) => {
-    event.stopPropagation();
-    navMobileHide.style.display = "block";
-    menuAlone.style.display = "none";
+// Toggle menu on button click
+menuToggle.addEventListener('click', (e) => {
+  e.stopPropagation(); // Prevents this click from immediately triggering the "click outside" logic
+  navLinks.classList.toggle('show');
 });
 
-
-if (window.innerWidth <= 672) {
-    document.body.addEventListener("click", () => {
-        navMobileHide.style.display = "none";
-        menuAlone.style.display = "block";
-    });
-}
-
-// Prevent click inside nav from closing it
-navMobileHide.addEventListener("click", (event) => {
-    event.stopPropagation();
+// Close menu when clicking anywhere else
+window.addEventListener('click', (e) => {
+  // If the click is outside the navLinks AND outside the toggle button
+  if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+    navLinks.classList.remove('show');
+  }
 });
-
-// Close nav when body is scrolled
-body.addEventListener("scroll", () => {
-    if (navMobileHide.style.display === "block") {
-        navMobileHide.style.display = "none";
-        menuAlone.style.display = "block";
-    }
-});
-
-        

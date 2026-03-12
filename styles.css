@@ -61,6 +61,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     gap: 6rem;
     
     margin: 0;
@@ -90,7 +91,7 @@ body {
 /* NAVIGATION */
 /* ============================= */
 
-.nav-links {
+.desktop-nav-links {
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -102,7 +103,7 @@ body {
     text-decoration: none;
     text-align: center;
     padding: 0.6rem;
-    border-radius: 50px;
+    border-radius: 10px;
     background-color: #7C3AED;
     color: white;
     font-weight: 800;
@@ -119,29 +120,28 @@ body {
     background: #dfb601;
 }
 
-.mobile-menu-icon {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    color: #7C3AED;
+/* Initial state: Menu hidden, Icon visible */
+#nav-links {
+  display: none;
 }
 
-.mobile-menu {
-    background-color: rgba(255, 255, 255, 0.95);
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-    gap: 1rem;
-    z-index: 10;
+#menu-toggle {
+  display: block;
 }
 
-.mobile-nav-icon {
-    display: none;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.5rem;
+/* When the menu is active: Show menu, Hide icon */
+#nav-links.show {
+  display: flex;
 }
+
+/* Hide the toggle button ONLY when the menu has the .show class */
+#nav-links.show ~ #menu-toggle, 
+#mobile-navbar:has(#nav-links.show) #menu-toggle {
+  display: none;
+}
+
+
+
 
 /* ============================= */
 /* HERO SECTION */
@@ -221,7 +221,7 @@ body {
 }
 
 .hero-subtext {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: white;
     font-weight: 600;
     letter-spacing: 0.07rem;
@@ -281,16 +281,64 @@ body {
 }
 
 .hero-description {
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-wrap: inherit;
     color: white;
     margin-top: 2.5rem;
     max-width: 40rem;
 }
 
+
+/* ============================= */
+/* STATS SECTION */
+/* ============================= */
+
+.stats-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background:linear-gradient(
+        120deg,
+        #2563EB,
+        #7C3AED,
+        #4F46E5
+    );
+    color: white;
+    /* grid-template-columns: 1fr 1fr; */
+    gap: 1rem;
+    /* padding: 1rem; */
+}
+
+.stat-card {
+    /* background-color: white; */
+    /* padding: 1rem; */
+    text-align: center;
+    /* border-radius: 8px;
+    transition: all 0.3s ease;
+    animation: heartbeat 1.5s infinite; */
+}
+
+.stat-value {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.stat-text {
+    font-size: 0.75rem;
+    letter-spacing: 0.01rem;
+}
+
 /* ============================= */
 /* ASPIRANT & FUTARIAN SECTION */
 /* ============================= */
+
+.section-title{
+    font-size: clamp(1rem, 5vw, 1.6rem);
+    font-weight:700;
+    margin-bottom:10px;
+}
 
 .hub {
     margin-top: 5rem;
@@ -306,7 +354,7 @@ body {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 3rem;
     padding: 1rem;
 }
 
@@ -400,13 +448,6 @@ body {
     margin-top: 3rem;
 }
 
-.section-title{
-    font-size: 1.8rem;
-    font-weight:700;
-
-    color: black;
-}
-
 .steps-container{
     display:flex;
     justify-content:center;
@@ -483,25 +524,6 @@ body {
 /* ============================= */
 
 
-.glass-card {
-    width: 300px;
-    padding: 25px;
-
-    background: rgba(255,255,255,0.08);
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    border-radius: 15px;
-
-    border: 1px solid rgba(255,255,255,0.2);
-
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-
-    color: black;
-
-    transition: transform 0.3s ease;
-}
 
 .glass-card {
     width: 300px;
@@ -573,54 +595,27 @@ body {
     font-weight: 600;
 }
 
-/* ============================= */
-/* STATS SECTION */
-/* ============================= */
-
-.stats-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    padding: 1rem;
-}
-
-.stat-card {
-    background-color: white;
-    padding: 1rem;
-    text-align: center;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    animation: heartbeat 1.5s infinite; /* Heartbeat animation */
-}
-
-@keyframes heartbeat {
+/* @keyframes heartbeat {
             0% { transform: scale(1); }
             50% { transform: scale(1.08); }
             100% { transform: scale(1); }
-}
+} */
 
-.stat-value {
-    font-size: 1.2rem;
-    font-weight: 700;
-}
 
-.stat-text {
-    font-size: 0.85rem;
-}
 
-.stat-card:hover {
+/* .stat-card:hover {
     transition: transform 2s ease-in-out;
     animation: bounce 1s ease-in-out;
     cursor: pointer;
-}
+} */
 
-@keyframes bounce {
+/* @keyframes bounce {
   0%   { transform: translateY(0) scale(1); }
   30%  { transform: translateY(-10px) scale(1.2); }
   50%  { transform: translateY(0) scale(1); }
   70%  { transform: translateY(-5px) scale(1.1); }
   100% { transform: translateY(0) scale(1); }
-}
+} */
 
 /* ============================= */
 /* WHY CHOOSE US */
@@ -764,11 +759,7 @@ body {
     text-align:center;
 }
 
-.section-title{
-    font-size: clamp(1rem, 5vw, 2rem);
-    font-weight:700;
-    margin-bottom:10px;
-}
+
 
 .section-subtitle{
     color:#6b7280;
@@ -1007,16 +998,15 @@ body {
     text-decoration: none;
 }
 
-.transcend-copyright {
-    margin-top: 2rem;
-    text-align: center;
-    font-size: 0.9rem;
-    color: white;
-}
-
 .copyright {
     
     text-align: center;
     font-size: 0.9rem;
 }
 
+.transcend-copyright {
+    text-align: center;
+    font-size: 0.9rem;
+    color: white;
+    margin-top: 2rem;
+}

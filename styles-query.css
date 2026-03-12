@@ -1,8 +1,80 @@
-@media screen and (max-width: 900px) {
-    
+@media screen and (max-width:900px){
+
+  #nav-links{
+
+    position: fixed;
+    top: 5px;
+    right: -265px;
+
+    width: auto;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    /* Glass effect */
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 18px;
+
+    box-shadow:
+      0 10px 30px rgba(0,0,0,0.15),
+      0 0 25px rgba(124,58,237,0.15);
+
+    transition: right 0.35s cubic-bezier(.22,1,.36,1);
+
+    z-index: 1000;
+  }
+
+  #nav-links.show{
+    right: 15px;
+  }
+
+  .mobile-nav-icon svg{
+  color:#7C3AED;
+  width:22px;
+  height:22px;
 }
 
-@media screen and (min-width: 750px) {
+    .mobile-nav-icon {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between icon and text */
+    padding: 6px 10px;
+    text-decoration: none;
+    color: #333;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: background 0.2s ease;
+    }
+
+    /* Visual feedback when tapped */
+    .mobile-nav-icon:active {
+    background-color: #e0e0e0;
+    transform: scale(0.98);
+    }
+
+    /* Ensure icons align perfectly */
+    .mobile-nav-icon svg {
+    flex-shrink: 0;
+    color: #6366f1; /* Modern indigo color for icons */
+    }
+
+}
+
+
+
+
+
+@media screen and (min-width: 900px) {
     .aspirant-futarians-container {
         flex-direction: row;
     }
@@ -15,21 +87,18 @@
         flex-direction: row;
     }
 
-    .nav-links {
+    #mobile-navbar {
+        display: none;
+    }
+
+    .desktop-nav-links {
         display: flex;
     }
 
-    .mobile-menu-icon {
-        display: none;
-    }
+    
     
 }
 
 
-@media screen and (max-width: 749px) {
-    .mobile-menu {
-        display: none;
-    } 
-}
 
 
